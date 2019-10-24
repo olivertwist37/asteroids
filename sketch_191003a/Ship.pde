@@ -3,7 +3,7 @@ class Ship extends GameObject {
   //instance variables
 
 
-  int i;
+  int i,x;
   PVector direction;
 
   //constructor(s)
@@ -27,6 +27,8 @@ class Ship extends GameObject {
 fill(100,100,255,shipTimer*2);
 noStroke();
 ellipse(0,0,70,70);
+fill(255,x);
+ellipse(0,0,70,70);
 
     popMatrix();
   }
@@ -45,9 +47,21 @@ if (lives<=0){
     if (rightkey) direction.rotate(radians(3) );
 
     i++;
-    if (spacekey&&i>40) {
+    if (spacekey&&i>30) {
       myGameObjects.add(new Bullet());
       i=0;
     }
+    if (x<=0){
+     x=0; 
+    }
+    x--;
+    println("x"+x);
+    if (Xkey&&x<1) {
+location = new PVector(random(50, 950), random(50, 750));
+      x=255;
+    }
+    
+    
+    
   }
 }

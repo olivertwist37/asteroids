@@ -1,11 +1,13 @@
 class ufo extends GameObject {
-  int t;
+  int t,s;
   int y=0;
   ufo() {
     t=0;
     location =new PVector(0, 0);
-    velocity = new PVector(random(-2, 2), random(-2, 2));
+    velocity = new PVector(random(-0.2, 0.2), random(-0.2, 0.2));
+    
     lives=1;
+    s= (int)(random(0,5));
   }
   void show() {
     fill(lives*125);
@@ -18,7 +20,11 @@ class ufo extends GameObject {
   void act() {
     super.act();
     location.add(velocity);
+direction = new PVector(myShip.location.x-location.x,myShip.location.y-location.y);
 
+direction.setMag(0.1);
+velocity.add(direction);
+velocity.setMag(1);
     t++;
     println("t"+t);
     if (t>300) {
@@ -44,7 +50,7 @@ y--;
       myGameObjects.add(new particles(location.x, location.y) );
       myGameObjects.add(new particles(location.x, location.y) );
       myGameObjects.add(new particles(location.x, location.y) );
-      lives=lives-2;
+      lives=0;;
       myShip.lives=myShip.lives-2;
       y=100;
       shipTimer=100;

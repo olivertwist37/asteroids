@@ -25,16 +25,16 @@ if(myObj.lives==0) {
   
   n++;
     println("n"+n);
-    if (n>=3500) {
+    if (n>=1000) {
       myGameObjects.add(new Asteroid(125, 0, 0) );
       n=0;
     }
   
  j--;
 println("j"+j);
-if(j<0){
+if(j<1000){
 myGameObjects.add(new ufo() );
-j=30000;
+j=3000;
 
  
 

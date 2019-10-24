@@ -1,4 +1,4 @@
-boolean upkey, leftkey, downkey, rightkey, spacekey;
+boolean upkey, leftkey, downkey, rightkey, spacekey,Xkey;
 int mode,n,bestScore,shipTimer;
 int j=1500;
 final int intro = 0;
@@ -53,6 +53,7 @@ void keyPressed() {
   if (keyCode == LEFT) leftkey = true;
   if (keyCode == RIGHT) rightkey = true;
   if (key == ' ') spacekey = true;
+  if (key == 'x') Xkey = true;
 }
 
 void keyReleased() {
@@ -61,6 +62,7 @@ void keyReleased() {
   if (keyCode == LEFT) leftkey = false;
   if (keyCode == RIGHT) rightkey = false;
   if (key == ' ') spacekey = false;
+  if (key == 'x') Xkey = false;
 }
 
 void mousePressed() {

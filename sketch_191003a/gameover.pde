@@ -7,6 +7,7 @@ void gameOver(){
   
   if (k>=bestScore){
   bestScore=k;
+
   }
   
   myShip.lives=3;

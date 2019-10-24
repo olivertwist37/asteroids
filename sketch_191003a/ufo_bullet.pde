@@ -3,7 +3,7 @@ class ufoBullet extends GameObject{
   ufoBullet(float x,float y){
     location = new PVector (x,y);
  velocity = new PVector (myShip.location.x-location.x,myShip.location.y-location.y);
-velocity.setMag(2);
+velocity.setMag(3);
 lives=1;
   }
   void show(){
